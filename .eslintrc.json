@@ -1,0 +1,20 @@
+{
+    "parser": "babel-eslint",
+    "extends": ["plugin:prettier/recommended", "prettier", "prettier/react"],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "error"
+    },
+    "parseOptions": {
+        "ecmaVersion": 2018, // it will allow us to use async, await, etc.
+        "sourceType": "module", // this means we will import and export (ES modules)
+        "ecmaFeatures": {
+            "jsx": true
+        } // ESLint will understand jsxformat
+    },
+    "env": {
+        "es6": true, // to use ES6 features
+        "browser": true, // to use document, setTimeout, window and other browser things
+        "node": true // to use http, require and other node things
+    }
+}

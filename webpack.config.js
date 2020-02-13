@@ -7,7 +7,6 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const isDev = process.env.NODE_ENV === 'development';
-console.log(isDev, process.env.NODE_ENV);
 
 module.exports = {
     mode: isDev ? process.env.NODE_ENV : 'production',
@@ -22,15 +21,13 @@ module.exports = {
     devtool: 'source-map',
     plugins: [htmlPlugin],
     module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
             },
-        ],
+        }, ],
     },
     watch: true,
 };
